@@ -3,5 +3,6 @@
 class Mage :
     public Player
 {
+	void distanceAttack();
 };
 
