@@ -16,5 +16,6 @@ class Entity
 	virtual void ApplyDamage(int);
 
 	virtual void OnUpdate();
+
 };
 

@@ -5,6 +5,7 @@ void Entity::Movement()
 
 int Entity::Health()
 {
+	return 0;
 }
 
 void Entity::Attack()
