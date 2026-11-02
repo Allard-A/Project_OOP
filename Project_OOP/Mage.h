@@ -3,6 +3,6 @@
 class Mage :
     public Player
 {
-	void distanceAttack();
+	void DistantAttack();
 };
 

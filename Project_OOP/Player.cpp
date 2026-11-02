@@ -1,5 +1,5 @@
 #include "Player.h"
 
-void Player::movePlayer()
+void Player::MovePlayer()
 {
 }

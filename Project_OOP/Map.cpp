@@ -1,5 +1,5 @@
 #include "Map.h"
 
-void Map::afficherMap()
+void Map::DisplayMap()
 {
 }

@@ -3,6 +3,6 @@
 class Enemy :
     public Entity
 {
-    int nombreennemies();
+    int NumberEnnemies();
 };
 

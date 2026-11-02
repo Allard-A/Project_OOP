@@ -1,6 +1,6 @@
 #pragma once
 class Map
 {
-	void afficherMap();
+	void DisplayMap();
 };
 

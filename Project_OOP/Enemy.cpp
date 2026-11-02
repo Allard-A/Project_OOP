@@ -1,4 +1,4 @@
 #include "Enemy.h"
-int Enemy::nombreennemies()
+int Enemy::NumberEnnemies()
 {
 }

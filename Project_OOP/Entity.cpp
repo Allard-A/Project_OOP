@@ -1,28 +1,32 @@
 #include "Entity.h"
-void Entity::movement()
+void Entity::Movement()
 {
 }
 
-int Entity::health()
+int Entity::Health()
 {
 }
 
-void Entity::attack()
+void Entity::Attack()
 {
 }
-void Entity::collision()
-{
-
-}
-
-void Entity::display()
+void Entity::Collision()
 {
 
 }
-void Entity::alive() {
+
+void Entity::Display()
+{
+
+}
+void Entity::Alive() {
 
 }
 
-inline void Entity::applyDamage(int) {
+inline void Entity::ApplyDamage(int) {
 
+}
+
+void Entity::OnUpdate()
+{
 }

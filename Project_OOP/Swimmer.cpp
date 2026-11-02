@@ -1,5 +1,5 @@
 #include "Swimmer.h"
 
-void Swimmer::swimming()
+void Swimmer::Swimming()
 {
 }

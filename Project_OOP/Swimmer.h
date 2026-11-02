@@ -1,6 +1,6 @@
 #pragma once
 class Swimmer
 {
-	void swimming();
+	void Swimming();
 };
 

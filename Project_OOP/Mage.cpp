@@ -1,5 +1,5 @@
 #include "Mage.h"
 
-void Mage::distanceAttack()
+void Mage::DistantAttack()
 {
 }

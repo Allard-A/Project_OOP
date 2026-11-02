@@ -1,18 +1,20 @@
 #pragma once
 class Entity
 {
-	virtual void movement();
+	virtual void Movement();
 
-	virtual int health();
+	virtual int Health();
 
-	virtual void attack();
+	virtual void Attack();
 
-	virtual void collision();
+	virtual void Collision();
 
-	virtual void display();
+	virtual void Display();
 
-	virtual void alive();
+	virtual void Alive();
 
-	virtual void applyDamage(int);
+	virtual void ApplyDamage(int);
+
+	virtual void OnUpdate();
 };
 

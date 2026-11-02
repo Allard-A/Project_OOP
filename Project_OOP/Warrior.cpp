@@ -1,6 +1,6 @@
 #include "Warrior.h"
 
-int Warrior::health()
+int Warrior::Health()
 {
     return 0;
 }

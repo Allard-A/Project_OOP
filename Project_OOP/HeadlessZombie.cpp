@@ -1,6 +1,6 @@
 #include "HeadlessZombie.h"
 
-void HeadlessZombie::randommovement()
+void HeadlessZombie::RandomNumber()
 {
 
 }

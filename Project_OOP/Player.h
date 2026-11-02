@@ -3,7 +3,7 @@
 class Player :
     public Entity
 {
-	void movePlayer();
+	void MovePlayer();
 
 };
 
