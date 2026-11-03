@@ -1,5 +1,6 @@
 #include "Enemy.h"
 int Enemy::NumberEnnemies()
 {
-	return 0;
+	int Number = 5;
+	return Number;
 }

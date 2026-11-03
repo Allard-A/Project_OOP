@@ -1,19 +1,24 @@
 #pragma once
 class Entity
 {
+protected:
 	virtual void Movement();
+private:
+	int m_health = 100;
+protected:
+	virtual int& Health() { return m_health; };
 
-	virtual int Health();
+	virtual int Attack( int attack = 1);
 
-	virtual void Attack();
 
 	virtual void Collision();
 
 	virtual void Display();
 
-	virtual void Alive();
+	bool Alive();
 
-	virtual void ApplyDamage(int);
+	virtual void ApplyDamage();
+
 
 	virtual void OnUpdate();
 

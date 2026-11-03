@@ -1,16 +1,12 @@
 #include "Entity.h"
+#include<iostream>
+#include "Map.h"
 void Entity::Movement()
 {
 }
 
-int Entity::Health()
-{
-	return 0;
-}
 
-void Entity::Attack()
-{
-}
+
 void Entity::Collision()
 {
 
@@ -19,15 +15,19 @@ void Entity::Collision()
 void Entity::Display()
 {
 
-}
-void Entity::Alive() {
 
 }
+	
+bool Entity::Alive() {
+	return Entity::Health() > 0;
+}
 
-inline void Entity::ApplyDamage(int) {
+void Entity::ApplyDamage() {
 
+	Entity::Health() -= Entity::Attack();
 }
 
 void Entity::OnUpdate()
 {
+
 }
