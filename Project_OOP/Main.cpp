@@ -2,7 +2,7 @@
 #include "Map.h"
 int main()
 {
-	Map map;
+	Map map(20, 10);
 	map.DisplayMap();
 }
 

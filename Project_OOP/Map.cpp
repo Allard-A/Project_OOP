@@ -1,43 +1,60 @@
 #include "Map.h"
 #include <iostream>
-const int MapLength = 10;
-const int MapWidth = 20;
-enum MapObstacle {
-	Ground,
-	Mountain,
-	Water,
-	Exit
-};
 
-int map[MapLength * MapWidth] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-								  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 2, 2, 0, 0, 0,
-								  0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0,
-						  		  0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 2, 2, 0, 0, 0, 2, 0, 0, 0,
-								  0, 0, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 3, 0, 0, 2, 0, 0, 0,
-								  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
-								  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
-								  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-								  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-								  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-};
-int* p = map;
 
-void Map::DisplayMap()
-{	for (int y = 0; y < MapLength; y++) {
-		for (int x = 0; x < MapWidth; x++) {
-			 
-				if (p[x + (y * MapWidth)] == Ground) {
-					std::cout << '.' << ' ';
-				}
-				else if (p[x + (y * MapWidth)] == Mountain) {
-					std::cout << 'A' << ' ';				}
-				else if (p[x + (y * MapWidth)] == Water) {
-					std::cout << '~' << ' ';
-				}
-				else if (p[x + (y * MapWidth)] == Exit) {
-					std::cout << 'E' << ' ';
-				}			
+
+Map::Map(int width, int length)
+{
+    Data = new int[width * length];
+
+    // Tout mettre en Ground
+    for (int i = 0; i < width * length; i++)
+    {
+        Data[i] = Ground;
+    }
+
+    // Placer les montagnes
+    for (int x = 2; x < 6; x++)
+    {
+        for (int y = 1; y < 8; y++)
+        {
+            Data[x * width + y] = Mountain;
 		}
-		std::cout << '\n';
-	}
+    }
+
+    // Placer l'eau
+    for (int x = 3; x < 8; x++)
+    {
+        for (int y = 16; y < 20; y++)
+        {
+            Data[x * width + y] = Water;
+        }
+    }
 }
+
+void Map::DisplayMap(){
+    for (int i = 0; i < GetLength(); i++)
+    {
+        for (int j = 0; j < GetWidth(); j++)
+        {
+            int index = i * GetWidth() + j;
+            switch (Data[index])
+            {
+            case Ground:
+                std::cout << ". ";
+                break;
+            case Mountain:
+                std::cout << "A ";
+                break;
+            case Water:
+                std::cout << "~ ";
+                break;
+            case Exit:
+                std::cout << "E ";
+                break;
+            }
+        }
+        std::cout << std::endl;
+    }
+}
+
