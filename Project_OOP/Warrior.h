@@ -3,6 +3,6 @@
 class Warrior :
     public Player
 {
-	int Health() override;
+	
 };
 

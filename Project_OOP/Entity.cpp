@@ -3,6 +3,7 @@
 #include "Map.h"
 void Entity::Movement()
 {
+
 }
 
 

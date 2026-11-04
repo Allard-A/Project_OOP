@@ -1,8 +1,10 @@
 #include <iostream>
 #include "Map.h"
+#include "HeadlessZombie.h"
 int main()
 {
-	Map map(20, 10);
-	map.DisplayMap();
+	HeadlessZombie zombie;
+	int randomValue = zombie.RandomNumber();
+	std::cout << "Random Value: " << randomValue << std::endl;
 }
 
