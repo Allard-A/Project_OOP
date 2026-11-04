@@ -57,4 +57,3 @@ void Map::DisplayMap(){
         std::cout << std::endl;
     }
 }
-

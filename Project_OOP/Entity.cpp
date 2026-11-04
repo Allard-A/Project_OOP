@@ -8,6 +8,8 @@ void Entity::Movement()
 
 
 
+
+
 void Entity::Collision()
 {
 
@@ -25,7 +27,7 @@ bool Entity::Alive() {
 
 void Entity::ApplyDamage() {
 
-	Entity::Health() -= Entity::Attack();
+	Entity::Health() -= Entity::attack;
 }
 
 void Entity::OnUpdate()

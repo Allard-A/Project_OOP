@@ -20,7 +20,7 @@ public:
     void DisplayMap();
     int GetWidth() { return Width; }
     int GetLength() { return Length; }
-	void release() { delete[] Data; }
+	void Release() { delete[] Data; }
     void SetCell(int x, int y, int type);
 
 };

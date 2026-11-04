@@ -5,7 +5,7 @@ protected:
 	virtual void Movement();
 	virtual int& Health() { return m_health; };
 
-	virtual int Attack(int attack = 1);
+	int attack = 1;
 
 
 	virtual void Collision();
