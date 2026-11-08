@@ -1,10 +1,11 @@
-#include <iostream>
 #include "Map.h"
-#include "HeadlessZombie.h"
+#include "Entity.h"
+
 int main()
 {
-	HeadlessZombie zombie;
-	int randomValue = zombie.RandomNumber();
-	std::cout << "Random Value: " << randomValue << std::endl;
+    Map map(20, 10);
+    Entity entity;
+    entity.PositionEntity('P', 10, 0);
+    map.DisplayMap(entity);
+    map.Release();
 }
-

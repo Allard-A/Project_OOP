@@ -1,4 +1,5 @@
 #pragma once
+#include "Entity.h"
 class Map
 {
 public:
@@ -10,17 +11,18 @@ public:
     };
 
 private:
-    int*       Data;
-    const int        Width =20;
-    const int        Length =10;
+    int* Data;
+    const int        Width = 20;
+    const int        Length = 10;
+
 
 public:
     Map(int width, int length);
 
-    void DisplayMap();
+    void DisplayMap(const Entity& entity);
     int GetWidth() { return Width; }
     int GetLength() { return Length; }
-	void Release() { delete[] Data; }
+    void Release() { delete[] Data; }
     void SetCell(int x, int y, int type);
 
 };

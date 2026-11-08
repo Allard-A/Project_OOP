@@ -32,26 +32,25 @@ Map::Map(int width, int length)
     }
 }
 
-void Map::DisplayMap(){
+void Map::DisplayMap(const Entity& entity)
+{
     for (int i = 0; i < GetLength(); i++)
     {
         for (int j = 0; j < GetWidth(); j++)
         {
+            if (j == entity.GetX() && i == entity.GetY())
+            {
+                std::cout << entity.GetName() << " ";
+                continue;
+            }
+
             int index = i * GetWidth() + j;
             switch (Data[index])
             {
-            case Ground:
-                std::cout << ". ";
-                break;
-            case Mountain:
-                std::cout << "A ";
-                break;
-            case Water:
-                std::cout << "~ ";
-                break;
-            case Exit:
-                std::cout << "E ";
-                break;
+            case Ground:   std::cout << ". "; break;
+            case Mountain: std::cout << "A "; break;
+            case Water:    std::cout << "~ "; break;
+            case Exit:     std::cout << "E "; break;
             }
         }
         std::cout << std::endl;
