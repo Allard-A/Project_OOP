@@ -8,4 +8,5 @@ int main()
     entity.PositionEntity('P', 10, 0);
     map.DisplayMap(entity);
     map.Release();
+   
 }

@@ -10,12 +10,26 @@ void Entity::PositionEntity(char name, int x, int y)
     posX = x;
     posY = y;
 }
-void Entity::Movement()
-{
 
+void Entity::MoveLeft()
+{
+    posX -= 1;
 }
 
+void Entity::MoveRight() 
+{
+    posX += 1; 
+}
 
+void Entity::MoveUp() 
+{
+    posY -= 1; 
+}
+
+void Entity::MoveDown() 
+{ 
+    posY += 1; 
+}
 
 void Entity::Collision()
 {

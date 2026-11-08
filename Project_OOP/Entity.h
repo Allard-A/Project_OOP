@@ -22,7 +22,13 @@ protected:
 
     virtual int& Health() { return m_health; };
 
-    virtual void Movement();
+    void MoveLeft();
+
+	void MoveRight();
+
+	void MoveUp();
+ 
+	void MoveDown();
 
     int attack = 1;
 
