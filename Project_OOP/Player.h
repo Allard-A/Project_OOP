@@ -1,9 +1,12 @@
 #pragma once
 #include "Entity.h"
-class Player :
-    public Entity
+
+class Player : public Entity
 {
-	void MovePlayer();
-
+public:
+    void PositionEntity(char name, int x, int y) override;
+    void StartPlayer();
+    void MovePlayer();
+    void indentityPlayer();
+    void setName(char);
 };
-
