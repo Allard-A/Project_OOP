@@ -10,4 +10,23 @@ int HeadlessZombie::RandomNumber()
 
 	int aleatoire = distrib(gen);
 	return aleatoire;
+
 }
+
+void HeadlessZombie::Movement()
+{
+    int random = RandomNumber();
+    if (random == 0) {
+        MoveLeft();
+    }
+    else if (random == 1) {
+        MoveRight();
+    }
+    else if (random == 2) {
+        MoveUp();
+    }
+    else if (random == 3) {
+        MoveDown();
+    }
+}
+

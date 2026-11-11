@@ -5,7 +5,8 @@
 class HeadlessZombie :
     public Enemy
 {
-public:
+
     int RandomNumber();
+    void HeadlessZombie::Movement();
 };
 
