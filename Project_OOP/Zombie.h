@@ -3,7 +3,7 @@
 class Zombie :
     public Enemy
 {
-    void ZombieTargeting();
+    void ZombieTargeting(int playerX, int playerY);
 };
 
 
