@@ -1,40 +1,36 @@
 #pragma once
+
+class Map;   // déclaration anticipée (pas de #include "Map.h" ici)
+
 class Entity
-
 {
-
 private:
-
-    char Name;
-    int m_health = 1;
-    int posX;
-    int posY;
-
-public:
-    virtual void PositionEntity(char name, int x, int y);
-
-    int GetX() const { return posX; };
-    int GetY() const { return posY; };
-    const char GetName() const { return Name; };
-    virtual ~Entity() = default;
+    char Name = 'H';
+    int posX = 0;
+    int posY = 0;
 
 protected:
-
-    virtual int& Health() { return m_health; };
-
-    virtual void Movement();
-
+    int m_health = 1;
     int attack = 1;
 
+public:
 
-    virtual void Collision();
+    virtual void PositionEntity(char name, int x, int y);
+    int  GetX() const { return posX; }
+    int  GetY() const { return posY; }
+    char GetName() const { return Name; }
+    virtual void Movement(const Map& map);
 
-    virtual void Display();
+    virtual bool Collision(const Map& map, int x, int y);
+    virtual void Display() const;
+    virtual void OnUpdate(const Map& map);
 
-    bool Alive();
+    int  GetHealth() const { return m_health; }
+    int  GetAttack() const { return attack; }
+    void SetHealth(int h) { m_health = h; }
+    bool Alive() const { return m_health > 0; }
+    virtual void TakeDamage(int amount);
 
-    virtual void ApplyDamage();
-
-
-    virtual void OnUpdate();
+protected:
+    bool TryMove(const Map& map, int dx, int dy);
 };
