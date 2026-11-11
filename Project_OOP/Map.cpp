@@ -9,13 +9,11 @@ Map::Map(int width, int length)
 
     for (int i = 0; i < Width * Length; i++)
         Data[i] = Ground;
-<<<<<<< Updated upstream
-=======
+
     for (int y=19;)
         for (int x = 9)
             Data[y * Width + x] = Exit;
 
->>>>>>> Stashed changes
 
     // Montagnes : colonnes 1 à 7, lignes 2 à 5
     for (int y = 2; y < 6; y++)
