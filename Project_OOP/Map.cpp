@@ -1,51 +1,37 @@
 #include "Map.h"
+#include "Entity.h"
 #include <iostream>
-
-
 
 Map::Map(int width, int length)
 {
-    Data = new int[width * length];
+    Data = new int[Width * Length];
 
-    // Tout mettre en Ground
-    for (int i = 0; i < width * length; i++)
-    {
+    for (int i = 0; i < Width * Length; i++)
         Data[i] = Ground;
-    }
 
-    // Placer les montagnes
-    for (int x = 2; x < 6; x++)
-    {
-        for (int y = 1; y < 8; y++)
-        {
-            Data[x * width + y] = Mountain;
-		}
-    }
+    // Montagnes : colonnes 1 à 7, lignes 2 à 5
+    for (int y = 2; y < 6; y++)
+        for (int x = 1; x < 8; x++)
+            Data[y * Width + x] = Mountain;
 
-    // Placer l'eau
-    for (int x = 3; x < 8; x++)
-    {
-        for (int y = 16; y < 20; y++)
-        {
-            Data[x * width + y] = Water;
-        }
-    }
+    // Eau : colonnes 16 à 19, lignes 3 à 7
+    for (int y = 3; y < 8; y++)
+        for (int x = 16; x < 20; x++)
+            Data[y * Width + x] = Water;
 }
-
-void Map::DisplayMap(const Entity& entity)
+void Map::DisplayMap(const Entity& entity) const
 {
-    for (int i = 0; i < GetLength(); i++)
+    for (int y = 0; y < Length; y++)
     {
-        for (int j = 0; j < GetWidth(); j++)
+        for (int x = 0; x < Width; x++)
         {
-            if (j == entity.GetX() && i == entity.GetY())
+            if (entity.Alive() && entity.GetX() == x && entity.GetY() == y)
             {
-                std::cout << entity.GetName() << " ";
+                entity.Display();
                 continue;
             }
 
-            int index = i * GetWidth() + j;
-            switch (Data[index])
+            switch (Data[y * Width + x])
             {
             case Ground:   std::cout << ". "; break;
             case Mountain: std::cout << "A "; break;

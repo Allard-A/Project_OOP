@@ -1,8 +1,7 @@
 #include "Entity.h"
-#include<iostream>
 #include "Map.h"
-#include "Player.h"
-
+#include <iostream>
+#include <conio.h>   
 
 void Entity::PositionEntity(char name, int x, int y)
 {
@@ -12,46 +11,36 @@ void Entity::PositionEntity(char name, int x, int y)
 }
 
 void Entity::MoveLeft()
+{    posX -= 1;}
+
+void Entity::MoveRight()
+{    posX += 1;}
+
+void Entity::MoveUp()
+{    posY -= 1;}
+
+void Entity::MoveDown()
+{    posY += 1;}
+
+bool Entity::Collision(const Map& map, int x, int y)
 {
-    posX -= 1;
+    if (x < 0 || x >= map.GetWidth() || y < 0 || y >= map.GetLength())
+        return true;
+
+    int block = map.GetData()[y * map.GetWidth() + x];
+
+    return block == Map::Mountain || block == Map::Water;
 }
 
-void Entity::MoveRight() 
+void Entity::Display() const
 {
-    posX += 1; 
+    std::cout << Name << " ";
 }
 
-void Entity::MoveUp() 
+
+void Entity::TakeDamage(int amount)
 {
-    posY -= 1; 
-}
-
-void Entity::MoveDown() 
-{ 
-    posY += 1; 
-}
-
-void Entity::Collision()
-{
-
-}
-
-void Entity::Display()
-{
-
-
-}
-
-bool Entity::Alive() {
-    return Entity::Health() > 0;
-}
-
-void Entity::ApplyDamage() {
-
-    Entity::Health() -= Entity::attack;
-}
-
-void Entity::OnUpdate()
-{
-
+    m_health -= amount;
+    if (m_health < 0)
+        m_health = 0;
 }

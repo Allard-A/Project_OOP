@@ -1,9 +1,9 @@
 #pragma once
 #include "Entity.h"
-class Player :
-    public Entity
+
+class Player : public Entity
 {
-	void MovePlayer();
-
+public:
+    Player() { m_health = 10; }
+    void Mouvement(const Map& map);
 };
-
