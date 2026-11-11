@@ -1,5 +1,8 @@
 #include "Zombie.h"
-
+Zombie::Zombie(char name, int x, int y) {
+	PositionEntity(name, x, y);
+	m_health = 1;
+}
 void Zombie::ZombieTargeting(int playerX, int playerY)
 {
 	if (GetX() < playerX) {

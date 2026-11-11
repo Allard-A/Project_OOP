@@ -1,4 +1,10 @@
 #include "HeadlessZombie.h"
+#include "Entity.h"
+
+HeadlessZombie::HeadlessZombie(char name, int x, int y) {
+    PositionEntity(name, x, y);
+    m_health = 1;
+}
 
 int HeadlessZombie::RandomNumber()
 {

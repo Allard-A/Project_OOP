@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+//Alexis
 
 class Map
 {
@@ -22,4 +23,6 @@ public:
     int GetWidth() const { return Width; }
     int GetLength() const { return Length; }
     void Release() { delete[] Data; }
+	void afficherGameOver() const;
+	void afficherVictoire() const;
 };

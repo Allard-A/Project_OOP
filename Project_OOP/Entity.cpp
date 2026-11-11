@@ -1,7 +1,7 @@
 #include "Entity.h"
 #include "Map.h"
-#include <iostream>
 #include <conio.h>   
+#include <iostream>
 
 void Entity::PositionEntity(char name, int x, int y)
 {

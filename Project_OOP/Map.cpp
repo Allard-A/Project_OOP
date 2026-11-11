@@ -1,6 +1,7 @@
 #include "Map.h"
 #include "Entity.h"
 #include <iostream>
+//Alexis
 
 Map::Map(int width, int length)
 {
@@ -19,20 +20,16 @@ Map::Map(int width, int length)
         for (int x = 16; x < 20; x++)
             Data[y * Width + x] = Water;
 }
-void Map::DisplayMap(const Entity& entity) const
-{
-    for (int y = 0; y < Length; y++)
-    {
-        for (int x = 0; x < Width; x++)
-        {
+void Map::DisplayMap(const Entity& entity) const{
+    for (int y = 0; y < Length; y++){
+        for (int x = 0; x < Width; x++){
             if (entity.Alive() && entity.GetX() == x && entity.GetY() == y)
             {
                 entity.Display();
                 continue;
             }
 
-            switch (Data[y * Width + x])
-            {
+            switch (Data[y * Width + x]){
             case Ground:   std::cout << ". "; break;
             case Mountain: std::cout << "A "; break;
             case Water:    std::cout << "~ "; break;
@@ -41,4 +38,16 @@ void Map::DisplayMap(const Entity& entity) const
         }
         std::cout << std::endl;
     }
+}
+
+void Map::afficherGameOver() const
+{
+    std::cout << "       GAME OVER        \n";
+    std::cout << "Le heros a perdu toutes ses vies !\n";
+}
+
+void Map::afficherVictoire() const
+{
+    std::cout << "       VICTOIRE !           \n";
+    std::cout << "Bravo ! Tu as atteint la fin !\n";
 }
