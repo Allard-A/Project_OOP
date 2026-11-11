@@ -38,7 +38,6 @@ void Entity::Display() const
 }
 
 
-
 void Entity::TakeDamage(int amount)
 {
     m_health -= amount;
