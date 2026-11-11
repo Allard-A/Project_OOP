@@ -31,7 +31,10 @@ void Game::GameInstance()
 		{
 			Map::DisplayGameOver;
 		}
-		else if (Entity::GetX == Map::Exit.x)
+		else if ()
+
+
+		map1.Release();
 
 
 	}
