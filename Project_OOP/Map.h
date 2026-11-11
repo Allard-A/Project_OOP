@@ -23,6 +23,6 @@ public:
     int GetWidth() const { return Width; }
     int GetLength() const { return Length; }
     void Release() { delete[] Data; }
-	void afficherGameOver() const;
-	void afficherVictoire() const;
+	void DisplayGameOver() const;
+	void DisplayVictory() const;
 };

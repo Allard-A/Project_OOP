@@ -27,6 +27,12 @@ void Game::GameInstance()
 		if (player1.GetX() == zombie1.GetX() && player1.GetY() == zombie1.GetY()) {
 			player1.TakeDamage(1);
 		}
+		if (Entity::Alive)
+		{
+			Map::DisplayGameOver;
+		}
+		else if (Entity::GetX == Map::Exit.x)
+
 
 	}
 }

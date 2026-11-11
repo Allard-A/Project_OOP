@@ -44,13 +44,13 @@ void Map::DisplayMap(const Entity& entity) const{
     }
 }
 
-void Map::afficherGameOver() const
+void Map::DisplayGameOver() const
 {
     std::cout << "       GAME OVER        \n";
     std::cout << "Le heros a perdu toutes ses vies !\n";
 }
 
-void Map::afficherVictoire() const
+void Map::DisplayVictory() const
 {
     std::cout << "       VICTOIRE !           \n";
     std::cout << "Bravo ! Tu as atteint la fin !\n";
