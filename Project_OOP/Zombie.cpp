@@ -1,18 +1,18 @@
 #include "Zombie.h"
 
-void Zombie::ZombieTargeting(Player& player)
+void Zombie::ZombieTargeting(int playerX, int playerY)
 {
-    if (GetX() < player.GetX()) { 
+    if (GetX() < playerX) { 
         MoveRight();
     }
-    else if (GetX() > player.GetX()) {
+    else if (GetX() > playerX) {
         MoveLeft();
 
     }
-    else if (GetY() < player.GetY()) {
+    else if (GetY() < playerY) {
         MoveDown();
     }
-    else if (GetY() > player.GetY()) {
+    else if (GetY() > playerY) {
         MoveUp();
     }
 }
