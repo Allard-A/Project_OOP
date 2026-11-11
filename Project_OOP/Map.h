@@ -21,7 +21,5 @@ public:
     void DisplayMap(const Entity& entity) const;
     int GetWidth() const { return Width; }
     int GetLength() const { return Length; }
-    bool IsWalkable(int x, int y) const;
     void Release() { delete[] Data; }
-    void SetCell(int x, int y, int type);
 };

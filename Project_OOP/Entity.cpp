@@ -1,6 +1,7 @@
 #include "Entity.h"
 #include "Map.h"
 #include <iostream>
+#include <conio.h>   
 
 void Entity::PositionEntity(char name, int x, int y)
 {
@@ -9,10 +10,17 @@ void Entity::PositionEntity(char name, int x, int y)
     posY = y;
 }
 
-void Entity::Movement(const Map& map)
-{
-    // Par défaut : l'entité ne bouge pas
-}
+void Entity::MoveLeft()
+{    posX -= 1;}
+
+void Entity::MoveRight()
+{    posX += 1;}
+
+void Entity::MoveUp()
+{    posY -= 1;}
+
+void Entity::MoveDown()
+{    posY += 1;}
 
 bool Entity::Collision(const Map& map, int x, int y)
 {
@@ -24,28 +32,12 @@ bool Entity::Collision(const Map& map, int x, int y)
     return block == Map::Mountain || block == Map::Water;
 }
 
-bool Entity::TryMove(const Map& map, int x, int y) {
-
-    int NewX = posX + x;
-    int NewY = posY + y;
-
-    if (Collision(map, NewX, NewY))
-        return false;
-
-    posX = NewX;
-    posY = NewY;
-    return true;
-}
-
 void Entity::Display() const
 {
     std::cout << Name << " ";
 }
 
-void Entity::OnUpdate(const Map& map)
-{
-    Movement(map);
-}
+
 
 void Entity::TakeDamage(int amount)
 {

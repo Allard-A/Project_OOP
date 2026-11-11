@@ -19,11 +19,15 @@ public:
     int  GetX() const { return posX; }
     int  GetY() const { return posY; }
     char GetName() const { return Name; }
-    virtual void Movement(const Map& map);
+
+
+    void MoveLeft();
+    void MoveRight();
+    void MoveUp();
+    void MoveDown();
 
     virtual bool Collision(const Map& map, int x, int y);
     virtual void Display() const;
-    virtual void OnUpdate(const Map& map);
 
     int  GetHealth() const { return m_health; }
     int  GetAttack() const { return attack; }
@@ -32,5 +36,4 @@ public:
     virtual void TakeDamage(int amount);
 
 protected:
-    bool TryMove(const Map& map, int dx, int dy);
 };
