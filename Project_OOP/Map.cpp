@@ -10,8 +10,7 @@ Map::Map(int width, int length)
     for (int i = 0; i < Width * Length; i++)
         Data[i] = Ground;
 
-    for (int y=19;)
-        for (int x = 9)
+    for (int y = 19; int x = 9;)
             Data[y * Width + x] = Exit;
 
 
