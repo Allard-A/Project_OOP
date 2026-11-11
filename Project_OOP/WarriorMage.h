@@ -4,6 +4,8 @@
 class WarriorMage :
     public Warrior , public Mage
 {
+
+	WarriorMage(char name, int x, int y);
 	
 };
 

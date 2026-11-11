@@ -3,6 +3,11 @@
 #include "Entity.h"
 #include <conio.h>
 #include <iostream>
+//Alexis
+
+Player::Player(char name, int x, int y) {
+	PositionEntity(name, x, y);
+}
 
 void Player::Mouvement(const Map& map) {
 	char touche = _getch();
