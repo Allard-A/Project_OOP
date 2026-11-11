@@ -1,6 +1,7 @@
 #pragma once
+//Alexis & Antoine
 
-class Map;   // déclaration anticipée (pas de #include "Map.h" ici)
+class Map;  
 
 class Entity
 {
